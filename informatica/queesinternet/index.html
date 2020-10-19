@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		
+	<meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+	<title> Que es Internet </title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../../basico/main.css">
+</head>	
+<script>
+	$( document ).ready(function() {
+    console.log( "ready!" );
+    $("#resultado").hide();
+    $("#detalle").hide();
+
+ });
+
+	function binario(){
+    $("#btncalcular").prop('disabled', true);
+    $("#text").prop('disabled', true);
+    var arreglo = [];
+	var num = parseInt(document.getElementById("text").value);
+	var i=1;
+	console.log(num);
+	  $("#resultado").show(500);
+	  $("#detalle").show(100);
+	  $("#resultado").html("<h2 style='color: red' align='center'>"+num+" = "+num.toString(2)+"</h2>");
+	
+	  do
+	  {
+	  	
+	  	 if ((num/2) % 1 == 0) {
+		   	$('#analisis tbody').append("<tr><td class='bg-danger'><strong>"+i+"</strong></td><td class='color:blue'>"+num+"</td><td>"+num+"/2="+num/2+"</td><td>"+Math.trunc(num/2)+"</td><td><span class='label label-warning'>0</span></td></tr>");
+		   	  $('#analisis tbody').show(100);   
+		   	  arreglo.push(0); 					
+		   	}
+		else{
+			$('#analisis tbody').append("<tr><td class='bg-danger' ><strong>"+i+"</strong></td><td>"+num+"</td><td>"+num+"/2="+num/2+"</td><td>"+Math.trunc(num/2)+"</td><td><span class='label label-info'>1</span></td></tr>"); 
+			 $('#analisis tbody').show(100);    
+			 arreglo.push(1); 
+
+		} 		
+			num=num/2;
+			i=i+1;
+			
+      num=Math.trunc(num);
+		} while (num>=1);
+           genera_tabla(2,i-1,arreglo,i-1);
+		
+	}
+
+	function recargar(){
+	location.reload();
+	}
+
+	function genera_tabla(ren,col,binario,max) {
+  // Obtener la referencia del elemento body
+  var body = document.getElementsByTagName("secuencia")[0];
+  // Crea un elemento <table> y un elemento <tbody>
+
+
+  var tabla   = document.createElement("table");
+  var tblBody = document.createElement("tbody");
+  // Crea las celdas
+  for (var i = 0; i < ren; i++) {
+    // Crea las hileras de la tabla
+    var hilera = document.createElement("tr");
+    for (var j = 0; j < col; j++) {
+      // Crea un elemento <td> y un nodo de texto, haz que el nodo de
+      // texto sea el contenido de <td>, ubica el elemento <td> al final
+      // de la hilera de la tabla
+      var celda = document.createElement("td");
+      celda.setAttribute("width","auto");
+      if (i==0){
+        var textoCelda = document.createTextNode(binario.pop());	 
+		}
+      else{
+  	  var textoCelda = document.createTextNode(Math.pow(2,max-1));
+  	  max--;
+		}
+      celda.appendChild(textoCelda);
+      hilera.appendChild(celda);
+    }
+    // agrega la hilera al final de la tabla (al final del elemento tblbody)
+    tblBody.appendChild(hilera);
+  }
+ 
+  // posiciona el <tbody> debajo del elemento <table>
+  tabla.appendChild(tblBody);
+  // appends <table> into <body>
+  body.appendChild(tabla);
+  // modifica el atributo "border" de la tabla y lo fija a "2";
+   tabla.setAttribute("class","table ");
+	}
+	function exportar(){
+	window.print();
+	}
+</script>
+<body >
+	<header  class="superior" >
+						
+		<div>		
+						<!--  modal mapas-->
+					<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+					<div class="modal-dialog modal-lg" role="document">
+						<div class="modal-content">
+							<center style="padding:20px">
+						<img src="../queesinternet/diagramas/diagrama1.jpg" class="img-thumbnail" alt="">
+						</center>
+						</div>
+					</div>
+					</div>
+			
+					<div class="modal fade bs-example-modal1-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+					<div class="modal-dialog modal-lg" role="document">
+						<div class="modal-content">
+						<center style="padding:20px">
+							<img src="../queesinternet/diagramas/diagrama2.jpg" class="img-thumbnail" alt="">
+						</center>
+						</div>
+					</div>
+					</div>
+					<div class="modal fade bs-example-modal2-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+					<div class="modal-dialog modal-lg" role="document">
+						<div class="modal-content">
+							<center style="padding:20px"> 
+								<img src="../queesinternet/diagramas/diagrama3.jpg" class="img-thumbnail" alt="">
+							</center>
+						</div>
+					</div>
+					</div>
+					<div class="modal fade bs-example-modal3-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+					<div class="modal-dialog modal-lg" class="img-thumbnail" role="document">
+						<div class="modal-content">
+								<center style="padding:20px"> 
+						<img src="../queesinternet/diagramas/diagrama4.png"  class="img-thumbnail" alt="">
+						</center>
+						</div>
+					</div>
+					</div>
+					<div class="modal fade bs-example-modal4-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+					<div class="modal-dialog modal-lg" class="img-thumbnail"  role="document">
+						<div class="modal-content">
+								<center style="padding:20px"> 
+						<img src="../queesinternet/diagramas/diagrama5.JPG"  class="img-thumbnail" alt="">
+						</center>
+						</div>
+					</div>
+					</div>
+					<div class="modal fade bs-example-modal5-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+					<div class="modal-dialog modal-lg" class="img-thumbnail"  role="document">
+						<div class="modal-content">
+								<center style="padding:20px"> 
+						<img src="../queesinternet/diagramas/diagrama6.jpg"  class="img-thumbnail" alt="">
+						</center>
+						</div>
+					</div>
+					</div>
+					<div class="modal fade bs-example-modal6-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+					<div class="modal-dialog modal-lg" class="img-thumbnail"  role="document">
+						<div class="modal-content">
+								<center style="padding:20px"> 
+						<img src="../queesinternet/diagramas/diagrama7.jpg"  class="img-thumbnail" alt="">
+						</center>
+						</div>
+					</div>
+					</div>
+					<div class="modal fade bs-example-modal7-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+					<div class="modal-dialog modal-lg" class="img-thumbnail"  role="document">
+						<div class="modal-content">
+								<center style="padding:20px"> 
+						<img src="../queesinternet/diagramas/diagrama8.gif"  class="img-thumbnail" alt="">
+						</center>
+						</div>
+					</div>
+					</div>
+					<div class="modal fade bs-example-modal8-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+						<div class="modal-dialog modal-lg" class="img-thumbnail"  role="document">
+							<div class="modal-content">
+									<center style="padding:20px"> 
+							<img src="../queesinternet/diagramas/diagrama9.jpg"  class="img-thumbnail" alt="">
+							</center>
+							</div>
+						</div>
+						</div>
+					<div class="modal fade bs-example-modal9-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+							<div class="modal-dialog modal-lg" class="img-thumbnail"  role="document">
+								<div class="modal-content">
+										<center style="padding:20px"> 
+								<img src="../queesinternet/diagramas/diagrama10.png"  class="img-thumbnail" alt="">
+								</center>
+								</div>
+							</div>
+							</div>
+							<div class="modal fade bs-example-modal10-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+								<div class="modal-dialog modal-lg" class="img-thumbnail"  role="document">
+									<div class="modal-content">
+											<center style="padding:20px"> 
+									<img src="../queesinternet/diagramas/diagrama11.png"  class="img-thumbnail" alt="">
+									</center>
+									</div>
+								</div>
+								</div>
+										<div class="modal fade bs-example-modal11-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+											<div class="modal-dialog modal-lg" class="img-thumbnail"  role="document">
+												<div class="modal-content">
+														<center style="padding:20px"> 
+												<img src="../queesinternet/diagramas/diagrama12.jpg"  class="img-thumbnail" alt="">
+												</center>
+												</div>
+											</div>
+											</div>
+
+						<!--modal de la sección centro-->
+					<div class="modal fade bs-example-modalinfo1-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+					<div class="modal-dialog modal-lg" role="document">
+						<div class="modal-content">
+							<center style="padding:20px">
+						<img src="../queesinternet/infogramas/infograma1.jpg" class="img-thumbnail" alt="">
+						</center>
+						</div>
+					</div>
+					</div>
+					<div class="modal fade bs-example-modalinfo2-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+						<div class="modal-dialog modal-lg" role="document">
+							<div class="modal-content">
+								<center style="padding:20px">
+							<img src="../queesinternet/infogramas/infograma2.jpg" class="img-thumbnail" alt="">
+							</center>
+							</div>
+						</div>
+						</div>
+						<div class="modal fade bs-example-modalinfo3-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+							<div class="modal-dialog modal-lg" role="document">
+								<div class="modal-content">
+									<center style="padding:20px">
+								<img src="../queesinternet/infogramas/infograma3.jpg" class="img-thumbnail" alt="">
+								</center>
+								</div>
+							</div>
+							</div>
+							<div class="modal fade bs-example-modalinfo4-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+								<div class="modal-dialog modal-lg" role="document">
+									<div class="modal-content">
+										<center style="padding:20px">
+									<img src="../queesinternet/infogramas/infograma4.jpg" class="img-thumbnail" alt="">
+									</center>
+									</div>
+								</div>
+								</div>
+								<div class="modal fade bs-example-modalinfo5-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+									<div class="modal-dialog modal-lg" role="document">
+										<div class="modal-content">
+											<center style="padding:20px">
+										<img src="../queesinternet/infogramas/infograma5.jpg" class="img-thumbnail" alt="">
+										</center>
+										</div>
+									</div>
+									</div>
+									<div class="modal fade bs-example-modalinfo6-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+										<div class="modal-dialog modal-lg" role="document">
+											<div class="modal-content">
+												<center style="padding:20px">
+											<img src="../queesinternet/infogramas/infograma6.png" class="img-thumbnail" alt="">
+											</center>
+											</div>
+										</div>
+										</div>
+										<div class="modal fade bs-example-modalinfo7-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+											<div class="modal-dialog modal-lg" role="document">
+												<div class="modal-content">
+													<center style="padding:20px">
+												<img src="../queesinternet/infogramas/infograma7.jpg" class="img-thumbnail" alt="">
+												</center>
+												</div>
+											</div>
+											</div>
+											<div class="modal fade bs-example-modalinfo8-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+												<div class="modal-dialog modal-lg" role="document">
+													<div class="modal-content">
+														<center style="padding:20px">
+													<img src="../queesinternet/infogramas/infograma8.jpg" class="img-thumbnail" alt="">
+													</center>
+													</div>
+												</div>
+												</div>
+												<div class="modal fade bs-example-modalinfo9-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+													<div class="modal-dialog modal-lg" role="document">
+														<div class="modal-content">
+															<center style="padding:20px">
+														<img src="../queesinternet/infogramas/infograma9.jpg" class="img-thumbnail" alt="">
+														</center>
+														</div>
+													</div>
+													</div>
+					
+
+					<!--  modal lecturas-->
+					<div class="modal fade" id="myModal1" >
+						<div class="modal-dialog modal-lg" role="document">
+						  <!-- Modal content-->
+						  <div class="modal-content" style="width: 900px;">
+							<div class="modal-body">
+								<!--<object data="https://issuu.com/sistemas_digitales7/docs/sistemas-digitales-arquitectura-com" class="img-thumbnail" style="width:100%; height:550px" type='application/pdf'></object>-->
+								<iframe src="https://www.slideshare.net/slideshow/embed_code/key/C0Bx3iLcom7jH9" class="img-thumbnail" style="width:100%; height:550px"> </iframe>
+							</div>
+						  </div>
+						</div>
+					</div>
+					<div class="modal fade" id="myModal2" >
+						<div class="modal-dialog modal-lg" role="document">
+						  <!-- Modal content-->
+						  <div class="modal-content" style="width: 900px;">
+							<div class="modal-body">
+								<!--<object data="https://issuu.com/sistemas_digitales7/docs/sistemas-digitales-arquitectura-com" class="img-thumbnail" style="width:100%; height:550px" type='application/pdf'></object>-->
+								<iframe src="https://www.slideshare.net/slideshow/embed_code/key/KQ3vmGAJcVXy3z" class="img-thumbnail" style="width:100%; height:550px"> </iframe>
+							</div>
+						  </div>
+						</div>
+					</div>
+					<div class="modal fade" id="myModal3" >
+						<div class="modal-dialog modal-lg" role="document">
+						  <!-- Modal content-->
+						  <div class="modal-content" style="width: 900px;">
+							<div class="modal-body">
+								<!--<object data="https://issuu.com/sistemas_digitales7/docs/sistemas-digitales-arquitectura-com" class="img-thumbnail" style="width:100%; height:550px" type='application/pdf'></object>-->
+								<iframe src="https://www.slideshare.net/slideshow/embed_code/key/bZ95OX8Dq1dNBR" class="img-thumbnail" style="width:100%; height:550px"> </iframe>
+							</div>
+						  </div>
+						</div>
+					</div>
+					<div class="modal fade" id="myModal4" >
+						<div class="modal-dialog modal-lg" role="document">
+						  <!-- Modal content-->
+						  <div class="modal-content" style="width: 900px;">
+							<div class="modal-body">
+								<!--<object data="https://issuu.com/sistemas_digitales7/docs/sistemas-digitales-arquitectura-com" class="img-thumbnail" style="width:100%; height:550px" type='application/pdf'></object>-->
+								<iframe src="https://www.slideshare.net/slideshow/embed_code/key/w64eYfwMFS8Iy3" class="img-thumbnail" style="width:100%; height:550px"> </iframe>
+							</div>
+						  </div>
+						</div>
+					</div>
+					<div class="modal fade" id="myModal5" >
+						<div class="modal-dialog modal-lg" role="document">
+						  <!-- Modal content-->
+						  <div class="modal-content" style="width: 900px;">
+							<div class="modal-body">
+								<!--<object data="https://issuu.com/sistemas_digitales7/docs/sistemas-digitales-arquitectura-com" class="img-thumbnail" style="width:100%; height:550px" type='application/pdf'></object>-->
+								<iframe src="https://www.slideshare.net/slideshow/embed_code/key/KmPvHwBMhIA528" class="img-thumbnail" style="width:100%; height:550px"> </iframe>
+							</div>
+						  </div>
+						</div>
+					</div>
+					<div class="modal fade" id="myModal6" >
+						<div class="modal-dialog modal-lg" role="document">
+						  <!-- Modal content-->
+						  <div class="modal-content" style="width: 900px;">
+							<div class="modal-body">
+								<!--<object data="https://issuu.com/sistemas_digitales7/docs/sistemas-digitales-arquitectura-com" class="img-thumbnail" style="width:100%; height:550px" type='application/pdf'></object>-->
+								<iframe src="https://www.slideshare.net/slideshow/embed_code/key/uQrtGE1vRCaP9X" class="img-thumbnail" style="width:100%; height:550px"> </iframe>
+							</div>
+						  </div>
+						</div>
+					</div>
+					<div class="modal fade" id="myModal7" >
+						<div class="modal-dialog modal-lg" role="document">
+						  <!-- Modal content-->
+						  <div class="modal-content" style="width: 900px;">
+							<div class="modal-body">
+								<!--<object data="https://issuu.com/sistemas_digitales7/docs/sistemas-digitales-arquitectura-com" class="img-thumbnail" style="width:100%; height:550px" type='application/pdf'></object>-->
+								<iframe src="https://www.slideshare.net/slideshow/embed_code/key/Jcm2hdDI2TUkrw" class="img-thumbnail" style="width:100%; height:550px"> </iframe>
+							</div>
+						  </div>
+						</div>
+					</div>
+					<div class="modal fade" id="myModal8" >
+						<div class="modal-dialog modal-lg" role="document">
+						  <!-- Modal content-->
+						  <div class="modal-content" style="width: 900px;">
+							<div class="modal-body">
+								<!--<object data="https://issuu.com/sistemas_digitales7/docs/sistemas-digitales-arquitectura-com" class="img-thumbnail" style="width:100%; height:550px" type='application/pdf'></object>-->
+								<iframe src="https://www.slideshare.net/slideshow/embed_code/key/LLnOc21yXi9eMw" class="img-thumbnail" style="width:100%; height:550px"> </iframe>
+							</div>
+						  </div>
+						</div>
+					</div>
+					<div class="modal fade" id="myModal9" >
+						<div class="modal-dialog modal-lg" role="document">
+						  <!-- Modal content-->
+						  <div class="modal-content" style="width: 900px;">
+							<div class="modal-body">
+								<!--<object data="https://issuu.com/sistemas_digitales7/docs/sistemas-digitales-arquitectura-com" class="img-thumbnail" style="width:100%; height:550px" type='application/pdf'></object>-->
+								<iframe src="https://www.slideshare.net/slideshow/embed_code/key/7Rmz8uQdM3Cpp6" class="img-thumbnail" style="width:100%; height:550px"> </iframe>
+							</div>
+						  </div>
+						</div>
+					</div>
+					<div class="modal fade" id="myModal10" >
+						<div class="modal-dialog modal-lg" role="document">
+						  <!-- Modal content-->
+						  <div class="modal-content" style="width: 900px;">
+							<div class="modal-body">
+								<!--<object data="https://issuu.com/sistemas_digitales7/docs/sistemas-digitales-arquitectura-com" class="img-thumbnail" style="width:100%; height:550px" type='application/pdf'></object>-->
+								<iframe src="https://www.slideshare.net/slideshow/embed_code/key/4u7VyhNfDfnMWh" class="img-thumbnail" style="width:100%; height:550px"> </iframe>
+							</div>
+						  </div>
+						</div>
+					</div>
+					<div class="modal fade" id="myModal11" >
+						<div class="modal-dialog modal-lg" role="document">
+						  <!-- Modal content-->
+						  <div class="modal-content" style="width: 900px;">
+							<div class="modal-body">
+								<!--<object data="https://issuu.com/sistemas_digitales7/docs/sistemas-digitales-arquitectura-com" class="img-thumbnail" style="width:100%; height:550px" type='application/pdf'></object>-->
+								<iframe src="https://www.slideshare.net/slideshow/embed_code/key/aUTEO0VTlkcmU6" class="img-thumbnail" style="width:100%; height:550px"> </iframe>
+							</div>
+						  </div>
+						</div>
+					</div>
+					<div class="modal fade" id="myModal12" >
+						<div class="modal-dialog modal-lg" role="document">
+						  <!-- Modal content-->
+						  <div class="modal-content" style="width: 900px;">
+							<div class="modal-body">
+								<!--<object data="https://issuu.com/sistemas_digitales7/docs/sistemas-digitales-arquitectura-com" class="img-thumbnail" style="width:100%; height:550px" type='application/pdf'></object>-->
+								<iframe src="//www.slideshare.net/slideshow/embed_code/key/k1I6EdIIjnt1Nb" class="img-thumbnail" style="width:100%; height:550px"> </iframe>
+							</div>
+						  </div>
+						</div>
+					</div>
+					<div class="modal fade" id="myModal13" >
+						<div class="modal-dialog modal-lg" role="document">
+						  <!-- Modal content-->
+						  <div class="modal-content" style="width: 900px;">
+							<div class="modal-body">
+								<!--<object data="https://issuu.com/sistemas_digitales7/docs/sistemas-digitales-arquitectura-com" class="img-thumbnail" style="width:100%; height:550px" type='application/pdf'></object>-->
+								<iframe src="https://issuu.com/dianyleon/docs/deep_web" class="img-thumbnail" style="width:100%; height:550px"> </iframe>
+							</div>
+						  </div>
+						</div>
+					</div>
+					<div class="modal fade" id="myModal14" >
+						<div class="modal-dialog modal-lg" role="document">
+						  <!-- Modal content-->
+						  <div class="modal-content" style="width: 900px;">
+							<div class="modal-body">
+								<!--<object data="https://issuu.com/sistemas_digitales7/docs/sistemas-digitales-arquitectura-com" class="img-thumbnail" style="width:100%; height:550px" type='application/pdf'></object>-->
+								<iframe src="https://issuu.com/manuelgutierrez47/docs/revista" class="img-thumbnail" style="width:100%; height:550px"> </iframe>
+							</div>
+						  </div>
+						</div>
+					</div>
+					<div class="modal fade" id="myModal15" >
+						<div class="modal-dialog modal-lg" role="document">
+						  <!-- Modal content-->
+						  <div class="modal-content" style="width: 900px;">
+							<div class="modal-body">
+								<!--<object data="https://issuu.com/sistemas_digitales7/docs/sistemas-digitales-arquitectura-com" class="img-thumbnail" style="width:100%; height:550px" type='application/pdf'></object>-->
+								<iframe src="https://www.slideshare.net/slideshow/embed_code/key/x9o3iwCh7ApLD5" class="img-thumbnail" style="width:100%; height:550px"> </iframe>
+							</div>
+						  </div>
+						</div>
+					</div>
+					<div class="modal fade" id="myModal16" >
+						<div class="modal-dialog modal-lg" role="document">
+						  <!-- Modal content-->
+						  <div class="modal-content" style="width: 900px;">
+							<div class="modal-body">
+								<!--<object data="https://issuu.com/sistemas_digitales7/docs/sistemas-digitales-arquitectura-com" class="img-thumbnail" style="width:100%; height:550px" type='application/pdf'></object>-->
+								<iframe src="https://issuu.com/agathamalafaia/docs/revista_deep_web" class="img-thumbnail" style="width:100%; height:550px"> </iframe>
+							</div>
+						  </div>
+						</div>
+					</div>
+					<div class="modal fade" id="myModal17" >
+						<div class="modal-dialog modal-lg" role="document">
+						  <!-- Modal content-->
+						  <div class="modal-content" style="width: 900px;">
+							<div class="modal-body">
+								<!--<object data="https://issuu.com/sistemas_digitales7/docs/sistemas-digitales-arquitectura-com" class="img-thumbnail" style="width:100%; height:550px" type='application/pdf'></object>-->
+								<iframe src="https://issuu.com/leandro699/docs/presentaci__n1__1_.pptx" class="img-thumbnail" style="width:100%; height:550px"> </iframe>
+							</div>
+						  </div>
+						</div>
+					</div>
+					<!--  modal prácticas-->
+					<div class="modal fade" id="practicas1" >
+						<div class="modal-dialog modal-lg" role="document">
+						  <div class="modal-content" style="width: 900px;">
+							<div class="modal-body">
+								<object data="https://universidadvirtualzacatecana.org/catalogoOA/informatica/queesinternet/practicas/Practica0.pdf" class="img-thumbnail" style="width:100%; height:550px" type='application/pdf'></object>
+							</div>
+						  </div>
+						</div>
+					</div>
+					<div class="modal fade" id="practicas2" >
+						<div class="modal-dialog modal-lg" role="document">
+						  <div class="modal-content" style="width: 900px;">
+							<div class="modal-body">
+								<object data="https://universidadvirtualzacatecana.org/catalogoOA/informatica/queesinternet/practicas/Practica1.pdf" class="img-thumbnail" style="width:100%; height:550px" type='application/pdf'></object>
+							</div>
+						  </div>
+						</div>
+					</div>
+				
+		</div>	
+        <section class="videos" >
+            <div class="contenidovideos">
+				<center>
+						
+				</center>
+            </div>
+            <div class="botonvideosh pestanavideos">
+              	<center>
+					<i class="fa fa-youtube-play"></i>
+	 		 		<h5>Video Recursos</h5>
+				</center>
+            </div>
+
+        </section>
+        <section class="clasevirtual" >
+			<div class=" contenidoclasevirtual" style="color:rgba(30,80,154,.9)">
+				
+            </div>
+            <div class="botonclasevirtual pestanaclasevirtual"  data-toggle="popover"  title="Clase virtual: El profesor ahora estará en esta sección y los recursos ebn los laterales"> 
+				<center>
+               	<span class="glyphicon glyphicon-blackboard"></span>
+				<h5>Clase Virtual</h5>	
+				</center>			
+            </div>
+        </section>
+        <section class="mapa" >
+            <div class="mapacontenido" style="color:rgba(30,80,154,.9)">
+				
+			</div>		
+			<div class="mapaboton pestanamapas"> 
+				<center>
+					<i class="fa fa-sitemap"></i>
+					<h5>Mapas</h5>	
+				</center>
+          	</div>
+    	</section>
+	</header>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+<article class="centro">
+        <div class="infograma" >
+			<div class="infogramacontenido" style="color:rgba(30,80,154,.9); padding:20px;">
+						
+			</div>
+			<div class="infogramaboton pestanainfograma" >
+				<center>
+				<i class="fa fa-picture-o"></i>
+				<h5>Infogramas</h5>	
+				</center>
+			</div>
+        </div>
+        <div class="contenidocentral pestanacentral">		
+        	 <center>
+		        <i class="fa fa-pie-chart"></i>
+			    <h5>Objeto de aprendizaje</h5>		
+			</center> 
+		</div>
+        <div class="lectura" >
+				<div class="lecturacontenido"  >
+					<div class="list-group" >
+						
+					</div>
+				</div>
+				<div class="botonlectura pestanalectura">	
+					<center>
+						<i class="fa fa-book"></i>
+						<h5>Lecturas</h5>
+					</center>
+				</div>
+        </div>
+</article>
+<article class="medio">
+        <div class="podcast" >
+			<div class="podcastcontenido" style="color:rgba(30,80,154,.9); padding:20px;">
+				
+			</div>
+			<div class="podcastboton pestanapodcast">
+				<center>
+				<i class="fa fa-headphones"></i>
+				<h5>Podcasts</h5>	
+				</center>
+			</div>
+		</div>
+		<div class="contenidocentral" >
+		   
+		</div>
+		<div class="practicas" >
+			<div class="practicascontenido" style="color:rgba(30,80,154,.9); padding:20px;" >
+				<div class="list-group" >
+				
+				</div>
+			</div>
+			<div class="botonpracticas pestanapracticas">	
+				<center>
+					<i class="fa fa-pie-chart"></i>
+					<h5>Prácticas</h5>
+				</center>
+			</div>
+</article>
+		
+<footer>
+	<div class="container" align="center"><img  class="logo img-thumbnail" src="../../basico/logo.png" alt=""  >
+		<div class=" panel panel-primary" >
+				<div class="panel-heading">
+						<h4 align="center">Foro</h4>		
+				</div>	
+				<div class="panel-body">
+						<iframe src="https://plataforma.universidadvirtualzacatecana.org/main/forum/viewthread.php?cidReq=INFO1&id_session=0&gidReq=0&gradebook=0&origin=&forum=61&thread=45&search=" class="img-thumbnail" style="width:100%; height:550px"> </iframe>
+				</div>
+				<br>
+		</div>	
+		
+		<footer >
+			<button type="button" class="btn group btn-warning"  value="Calcular" onClick="recargar()"style="margin-bottom:20px" >
+					<span class="glyphicon glyphicon-repeat" aria-hidden="false"> </span><b> Cerrar</b>
+			</button>
+				<div class="well well-sm panel footer">
+					<p class="" align ="justify">Este plugin fue diseñado por univeridadvirtualzacatecana.org, Como  un objeto de aprendizaje digital que ayuda al aprendizaje de un método para convertir numeros decimales a binarios, puedes acceder a este y muchos OA´s de manera gratuita si cuentas con nuestro plan MICRO+</p>
+					<a href="http://www.universidadvirtualzacatecana.org">Ver planes</a>
+				</div>
+		</footer>
+	</div>
+</footer>
+
+		<div class="titulo navbar navbar-nverse navbar-fixed-bottom">
+			<center><strong><h3><i class="fa fa-keyboard-o" style="font-size:30px; padding-right:30px;"></i> ¿Qué es internet?</h3></strong></center	>	
+		</div>
+		
+	<script>
+		clasevirtual=0;
+		videos=0;
+		mapas=0;
+		infogramas=0;
+		lecturas=0;
+		podcasts=0;
+		practicas=0;
+		
+		$(document).ready(function(){
+			$('.pestanaclasevirtual').click(function() {
+			$('.contenidoclasevirtual').slideToggle(1000);	
+			if (clasevirtual == 0){
+			$('.contenidoclasevirtual').load('clasevirtual/clasevirtual.html');
+			clasevirtual = clasevirtual+1;
+			}
+			});	
+			$('.pestanavideos').click(function() {
+			$('.contenidovideos').toggle("slide");
+			if (videos == 0){
+			$('.contenidovideos').load('videos/videos.html');
+			videos = videos+1;
+			}
+			});
+			$('.pestanamapas').click(function() {
+			$('.mapacontenido').toggle("slide");
+			if (mapas == 0){
+			$('.mapacontenido').load('diagramas/diagramas.html');
+			mapas = mapas+1;
+			}
+			});
+			$('.pestanainfograma').click(function() {
+			$('.infogramacontenido').toggle("slide");
+			if (infogramas == 0){
+			$('.infogramacontenido').load('infogramas/infogramas.html');
+			infogramas = infogramas+1;
+			}
+			});
+			$('.pestanalectura').click(function() {
+			$('.lecturacontenido').toggle("slide");
+			if (lecturas == 0){
+			$('.lecturacontenido').load('lecturas/lecturas.html');
+			lecturas = lecturas+1;
+			}
+			});
+			$('.pestanapodcast').click(function() {
+			$('.podcastcontenido').toggle("slide");
+			if (podcasts == 0){
+			$('.podcastcontenido').load('podcasts/podcasts.html');
+			podcasts = podcasts+1;
+			}
+			});	
+			$('.pestanapracticas').click(function() {
+			$('.practicascontenido').toggle("slide");
+			if (practicas == 0){
+			$('.practicascontenido').load('practicas/practicas.html');
+			practicas = practicas+1;
+			}
+			});
+			$('.pestanacentral').click(function() {
+			$('footer').show(100);
+			});
+		});
+		
+	</script>
+			
+</body>	
+</html>
