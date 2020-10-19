@@ -1,0 +1,541 @@
+/* Version 2.0 */
+
+
+.logo {
+    width:310px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background: #eeeeee;
+}
+
+body{
+    background: rgba(11,94,141,1);
+}
+
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: transparent;
+}
+
+::-webkit-scrollbar
+{  
+	width: 8px;
+	background-color:transparent;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: orange ;
+}
+
+
+.superior{
+    position:absolute;
+    width: 100%;
+    height: 600px;
+
+}
+.videos{
+    float:left;
+    width: 30%;
+    height: 100%;
+}
+.contenidovideos{
+    position: relative;
+    float:left;
+    width: 80%;
+    height: 100%;
+    display:none;
+    color:rgba(30,80,154,.9);
+    background-color: rgba(255,255,255,.9);
+    box-shadow: 1px 1px 10px black;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom-right-radius: 10px;
+    z-index: 500;
+    overflow:hidden;
+    overflow-y:scroll;
+}
+.botonvideosh{
+    position: relative;
+    float:left;
+    width: 20%;
+    height: 100%;  
+    margin-top: 50px;
+    z-index: 151;
+}
+.clasevirtual{
+    position: relative;
+    float:left;
+    width: 40%;
+    height: 100%;
+}
+
+.contenidoclasevirtual{
+    position: relative;
+    width: 100%;
+    height: 428px;
+    display:none;
+    color:lightgrey;
+    background-color: rgba(255,255,255,1);
+    box-shadow: 1px 1px 10px black;    
+    z-index: 500;
+    border-left : 3px solid orange;
+    border-right : 3px solid orange;
+    overflow:hidden;
+    overflow-y:scroll;
+}
+.botonclasevirtual{
+    position: relative;
+    float:left;
+    width: 100%;
+    height: 75px;
+    z-index: 500;
+}
+.mapa{
+    float:right;
+    width: 30%;
+    height: 100%;
+
+}
+.mapacontenido{
+    padding-left:20px;
+    padding-top: 20px;
+    padding-right: 10px;
+    position: relative;
+    float:right;
+    width: 80%;
+    height: 100%;
+    display:none;
+    color:lightgrey;
+    background-color: rgba(255,255,255,1);
+    box-shadow: 1px 1px 10px black;
+    border-bottom-left-radius: 10px;  
+    z-index: 500;
+    overflow:hidden;
+    overflow-y:scroll;
+    
+}
+.mapaboton{
+    position: relative;
+    float:right;
+    width: 20%;
+    height: 100%;
+    margin-top: 50px;
+    z-index: 500;
+}
+.centro{
+    position:absolute;
+    margin-top: 50px;
+    width:100%;
+    height:300px;
+}
+.infograma{
+    float:left;
+    width: 30%;
+    height: 100%;
+    z-index: 400;
+}
+.infogramacontenido {
+    position: relative;
+    float:left;
+    width: 80%;
+    height: 100%;
+    padding:5px;
+    display:none;
+    color:lightgrey;
+    background-color: rgba(255,255,255,1);
+    box-shadow: 1px 1px 10px black;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    overflow:hidden;
+    overflow-y:scroll;
+    z-index: 400;
+}
+.infogramaboton{
+    position: relative;
+    float:left;
+    width: 20%;
+    height: 100%;
+    margin-top: 50px;
+    z-index: 400;
+}
+.contenidocentral{
+    position: relative;
+    float:left;
+    width: 40%;
+    height: 100%;  
+    z-index: 1;
+}
+.lectura{
+    float:right;
+    width:30%;
+    height: 100%;
+}
+.lecturacontenido{
+    position: relative;
+    float:right;
+    width:80%;
+    height: 100%;
+    display:none;
+    color:lightgrey;
+    background-color: white;
+    box-shadow: 1px 1px 10px black;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    overflow:hidden;
+    overflow-y:scroll;
+    z-index: 400;
+    padding:20px;
+}
+.botonlectura{
+    position:relative;
+    float:right;
+    width:100%;
+    height: 100%;
+    margin-top: 50px;
+    z-index: 400;
+}
+.medio{
+    position:absolute;
+    margin-top: 150px;
+    width:100%;
+    height:300px;
+}
+.podcast{
+    position:absolute;
+    float:left;
+    width: 30%;
+    height: 100%;
+    z-index: 300;
+}
+.podcastcontenido {
+    
+        position: relative;
+        float:left;
+        width: 80%;
+        height: 100%;
+        padding:5px;
+        display:none;
+        color:lightgrey;
+        background-color: rgba(255,255,255,1);
+        box-shadow: 1px 1px 10px black;
+        margin-left: auto;
+        margin-right: auto;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+        overflow:hidden;
+        overflow-y:scroll;
+        z-index: 300;
+    
+}
+.podcastboton{
+    position: relative;
+    float:left;
+    width: 20%;
+    height: 100%;
+    margin-top: 50px;
+    z-index: 300;
+}
+
+.practicas{
+    float:right;
+    width:30%;
+    height: 100%;
+}
+.practicascontenido{
+    position: relative;
+    float:right;
+    width:80%;
+    height: 100%;
+    display:none;
+    color:lightgrey;
+    background-color: white;
+    box-shadow: 1px 1px 10px black;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    overflow:hidden;
+    overflow-y:scroll;
+    z-index: 300;
+    padding:20px;
+}
+
+.botonpracticas{
+    position:relative;
+    float:right;
+    width:100%;
+    height: 100%;
+    margin-top: 50px;
+    z-index: 300;
+}
+.inferior{
+    width: 100%;
+    height: 475px;
+}
+.container{
+    background: white;
+    border-radius: 10px;
+    border:solid 1px gray
+}
+h5 {
+    padding: 0;
+    margin:0;     
+}
+
+iframe 
+{   
+    margin-bottom:5px;
+    border:solid 2px lightgray;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px black;
+}
+footer {
+display: none;
+position:relative;
+z-index: 1;
+}
+.pestanaclasevirtual{
+        background-color: rgba(0,0,0,.1);
+     /*   width: 100px;*/
+        height: 75px;
+        color:lightgrey;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        margin: auto;
+        font-size: 40px;
+        font-weight: bolder;
+        margin-top: 0;
+        padding-top:0;
+        border-top : 3px solid orange; 
+        transition: all 1s;        
+}
+.pestanacentral{
+        background-color: rgba(0,0,0,.1);
+        width: 40%;
+        height: 40%;
+        color:lightgrey;
+        border-radius: 10px;
+        margin: auto;
+        font-size: 40px;
+        font-weight: bolder;
+        margin-top: 0;
+        padding-top:19px;
+        border: 3px solid orange; 
+        transition: all 1s;        
+}
+.pestanavideos{ 
+        background-color: rgba(0,0,0,.1);
+        width: 20%;
+        height: 18%;
+        color:lightgrey;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        font-size: 40px;
+        font-weight: bolder;
+        margin-top: 20;
+        padding-top:0;
+        transition: all 1s; 
+        border-left : 3px solid orange; 
+}
+.pestanamapas{
+        background-color: rgba(0,0,0,.1);
+        width: 20%;
+        height: 20%;
+        color:lightgrey;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        font-size: 40px;
+        font-weight: bolder;
+        margin-top: 20;
+        padding-top:0; 
+        transition: all 1s;   
+        border-right : 3px solid orange;      
+}
+.pestanainfograma{     
+        background-color: rgba(0,0,0,.1);
+        width: 20%;
+        height: 26%;
+        color:lightgrey;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        font-size: 40px;
+        font-weight: bolder;
+        margin-top: 20;
+        padding-top:0; 
+        transition: all 1s;   
+        border-left : 3px solid orange;      
+}
+.pestanalectura{
+        background-color: rgba(0,0,0,.1);
+        width: 20%;
+        height: 25%;
+        color:lightgrey;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        font-size: 40px;
+        font-weight: bolder;    
+        padding-top:0; 
+        transition: all 1s;   
+        border-right : 3px solid orange;      
+}
+.pestanapodcast{
+    background-color: rgba(0,0,0,.1);
+    width: 20%;
+    height: 26%;
+    color:lightgrey;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 40px;
+    font-weight: bolder;
+    margin-top: 20;
+    padding-top:0; 
+    transition: all 1s;   
+    border-left : 3px solid orange;      
+}
+.pestanapracticas{
+    background-color: rgba(0,0,0,.1);
+    width: 20%;
+    height: 25%;
+    color:lightgrey;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-size: 40px;
+    font-weight: bolder;    
+    padding-top:0; 
+    transition: all 1s;   
+    border-right : 3px solid orange;      
+}
+.titulo{
+    color:lightgray;
+    background-color: rgba(0,0,0,.1);
+     border-bottom : 3px solid orange;  
+}
+/* contenedores*/
+hr{
+    border-color:rgba(30,80,154,.9)
+}
+
+/*---------------- HOVERS--------------*/
+.pestanaclasevirtual:hover{
+    background-color: rgba(10,150,250,.2);
+    color:orange;
+    text-shadow: 3px 2px 5px black;
+    transition: all 1s;
+    cursor:pointer;
+  
+}
+.pestanacentral:hover{
+    background-color: rgba(10,150,250,.2);
+    color:orange;
+    text-shadow: 3px 2px 5px black;
+    transition: all 1s;
+    cursor:pointer;
+  
+}
+
+.pestanavideos:hover{
+    background-color: rgba(10,150,250,.2);
+    color:orange;
+    text-shadow: 3px 2px 5px black;
+    transition: all 1s;
+    cursor:pointer;
+}
+.pestanamapas:hover{
+    background-color: rgba(10,150,250,.2);
+    color:orange;
+    text-shadow: 3px 2px 5px black;
+    transition: all 1s;
+    cursor:pointer; 
+}
+.pestanainfograma:hover{
+    background-color: rgba(10,150,250,.2);
+    color:orange;
+    text-shadow: 3px 2px 5px black;
+    transition: all 1s;
+    cursor:pointer; 
+}
+
+.pestanalectura:hover{
+    background-color: rgba(10,150,250,.2);
+    color:orange;
+    text-shadow: 3px 2px 5px black;
+    transition: all 1s;
+    cursor:pointer;
+}
+.pestanapodcast:hover{
+    background-color: rgba(10,150,250,.2);
+    color:orange;
+    text-shadow: 3px 2px 5px black;
+    transition: all 1s;
+    cursor:pointer; 
+}
+.pestanapracticas:hover{
+    background-color: rgba(10,150,250,.2);
+    color:orange;
+    text-shadow: 3px 2px 5px black;
+    transition: all 1s;
+    cursor:pointer;
+}
+@media screen and (max-width: 800px)
+{
+    iframe{
+        width:100%;
+    }
+    h5{
+        font-size: 8px;
+    }
+    .contenidoclasevirtual{
+    position: relative;
+    left:-120px;
+    width: 180%;
+    height: 428px;
+    display:none;
+    color:lightgrey;
+    background-color: rgba(255,255,255,1);
+    box-shadow: 1px 1px 10px black;    
+    z-index: 500;
+    border-left : 3px solid orange;
+    border-right : 3px solid orange;
+    overflow:hidden;
+    overflow-y:scroll;
+    }
+
+
+@media screen and (max-width:450px)
+{
+    iframe{
+        width:100%;
+    }
+    h5{
+        font-size: 8px;
+    }
+    .contenidoclasevirtual{
+    position: relative;
+    left:-80px;
+    width: 200%;
+    height: 428px;
+    display:none;
+    color:lightgrey;
+    background-color: rgba(255,255,255,1);
+    box-shadow: 1px 1px 10px black;    
+    z-index: 500;
+    border-left : 3px solid orange;
+    border-right : 3px solid orange;
+    overflow:hidden;
+    overflow-y:scroll;
+    }
+
+
+}
+   
+}
