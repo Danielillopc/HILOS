@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>HILOS Designer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="hilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- modal de inforgrafia -->
+    <div class="modal fade infografia" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div id="infocontent">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal de conceptos -->
+    <div class="modal fade concepto" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div id="infoconcepto">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal lecturas -->
+    <div class="modal fade lecturas" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-xl"   role="document">
+            <div class="modal-content" >
+                <div id="infoslectura" style="width: 100%; height: 100%">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <section id="diseño" style="height:120vh">
+        <div class="container text-center">
+            <h1>Design Your Own HILO </h1>
+        </div>
+        <div class="container py-3 text-justify border" style="border-radius: 10px; margin-bottom: 20px;">
+            <p>This is the interactive HILOS designer software, in this version you can only test the design of a HILOS
+                with
+                one
+                resource per panel, for example in the videos section you can add a resource, remember that when you
+                finish
+                you must press the bottom button that says preview your HILO.</p>
+            <p>Este es el software diseñador interactivo de HILOS, en esta versión sólo puede probar el diseño de un
+                HILO
+                con un
+                recurso por panel, por ejemplo en la sección de videos puede agregar un recurso, recuerde que al
+                terminar
+                debe presionar el botón inferior que dice previsualizar su HILO.</p>
+   
+            <p style="font-size: 12px;"> NOTE: please note that these THREADS cannot be saved on the server so
+                everything
+                you do will be deleted when you close the test window.</p>
+            <p style="font-size: 12px;"> NOTA: por favor tomar en cuenta que esto HILOS no se pueden guardar en el
+                servidor
+                por lo que todo lo que usted realice será borrado al cerrar la ventana de prueba.</p>
+        </div>
+
+        <div class="container">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapsezero" aria-expanded="false" aria-controls="collapsezero">
+                            <i class="fa-solid fa-person-chalkboard "></i>
+                            <h4> General</h4>
+
+                        </button>
+                    </h2>
+                    <div id="collapsezero" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p>In this section you must choose a name for the HILO it must not exceed more than 7 words.
+                                What you put here will appear in the bottom center of the HILO.</p>
+                            <p>En esta sección debe escoger un nombre para el HILO no debe exceder más de 7 palabras. Lo
+                                que
+                                usted coloque aquí aparecra en la parte inferior central del HILO. </p>
+                            <input class="form-control inputs" type="text" name="" id="nombrehilo"
+                                placeholder="Insert Here your HILO´s Main Name for example Biology Concepts">
+                            <label for="">Select color for yout HILO</label>
+                            <!--  <input type="color" name="" id="" placeholder="Select a background color for your HILO" value="#ffffff"> -->
+
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            <i class="fa-solid fa-chalkboard"> </i>
+                            <h4> Virtual Clasroom</h4>
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p>In this section the videos that are considered mandatory for the student are placed,
+                                whether
+                                they are created by the teacher or obtained from any part of the Internet and are
+                                generally
+                                accompanied by a text that indicates what the student should do with this resource.
+                                whatever
+                                you put here will appear in the top center pane of the THREAD.</p>
+                            <p>En esta sección se colocan los videos que se consideren obligatorios para el alumno ya
+                                sean
+                                creados por el profesor u obtenidos de cualquier parte de internet y generalmente se
+                                acompañan de un texto que indica que debe hacer el alumno con este recurso. lo que
+                                coloque
+                                aquí aparecra en el panel superior central del HILO. </p>
+                            <input class="form-control inputs" type="text" name="" id="clasevirtualvideo"
+                                placeholder="Insert Here only your video key from yotube.">
+                            <textarea class="form-control inputs" name="" id="clasevirtualtexto" cols="30"
+                                placeholder="Insert Here the instructions for this video max 50 words "
+                                rows="10"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <i class="fa-brands fa-youtube"></i>
+                            <h4>Videos</h4>
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p>In this section are placed the videos that are considered optional for the student,
+                                whether
+                                they are created by the teacher or obtained from anywhere on the Internet. whatever you
+                                put
+                                here appears in the top left panel of the HILO.</p>
+                            <p>En esta sección se colocan los videos que se consideren opcionales para el alumno ya sean
+                                creados por el profesor u obtenidos de cualquier parte de internet. lo que usted coloque
+                                aquí aparecra en el panel superior izquierdo del HILO. </p>
+                            <input class="form-control inputs" type="text" name="" id="video"
+                                placeholder="Insert here only de link key for your video">
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            <i class="fa-solid fa-images"></i>
+                            <h4>infographics</h4>
+                        </button>
+                    </h2>
+                    <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p>In this section are placed the links to audiobooks, podcasts, or other resources that you
+                                consider important of an audible type. What you put here appears in the bottom left
+                                panel of
+                                the THREAD.</p>
+                            <p>En esta sección se colocan los links a audiolibros, podcasts, u otro recurso que
+                                considere
+                                importante de tipo audible. Lo que usted coloque aquí aparecra en el panel inferior
+                                izquierdo del HILO. </p>
+                            <input class="form-control inputs" type="text" name="" id="infografia"
+                                placeholder="Insert a complete web link for image">
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <i class="fa-solid fa-sitemap"></i>
+                            <h4>Concepts</h4>
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p>In this section, the concepts that you consider important for the subject are placed.
+                                They
+                                will generally be accompanied by an image that helps to understand said concept in a
+                                visual
+                                way. whatever you put here will appear in the top right pane of the HILO.</p>
+                            <p>En esta sección se colocan los conceptos que considere importantes para el tema
+                                generalmente
+                                irán acompañados de una imagen que ayude a comprender dicho concepto de manera visual.
+                                lo
+                                que usted coloque aquí aparecra en el panel superior derecho del HILO.</p>
+
+                            <input class="form-control inputs" type="text" name="" id="imagenconcepto"
+                                placeholder="Web link to the image to insert">
+                            <input class="form-control inputs" type="text" name="" id="tituloconcepto"
+                                placeholder="Title of your concept">
+                            <textarea class="form-control inputs" name="" id="contenidoconcepto" cols="30" rows="10"
+                                placeholder="Text of your concept"></textarea>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            <i class="fa-solid fa-headphones"></i>
+                            <h4>Audios</h4>
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p>In this section are placed the embbed code podcasts from preaker , or other resources
+                                that you
+                                consider important of an audible type. What you put here appears in the bottom left
+                                panel of
+                                the THREAD.</p>
+                            <p>En esta sección se colocan los links a podcasts desde spraker, u otro recurso que
+                                considere
+                                importante de tipo audible. Lo que usted coloque aquí aparecra en el panel inferior
+                                izquierdo del HILO. </p>
+                            <input class="form-control inputs" type="text" name="" id="podcast">
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapsefive" aria-expanded="false" aria-controls="collapseFive">
+                            <i class="fa-solid fa-book"></i>
+                            <h4>Readings</h4>
+                        </button>
+                    </h2>
+                    <div id="collapsefive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p>In this section are placed the links to e-book files(PDF). What you put here appears in
+                                the bottom right
+                                panel of
+                                the THREAD.</p>
+                            <p>En esta sección se colocan los links a libros electrónicos (PDF). Lo que usted coloque
+                                aquí aparecra en el panel inferior
+                                derecho del HILO. </p>
+                            <input class="form-control inputs" type="text" name="" id="librotitulo"
+                                placeholder="insert the title for a e-book">
+                            <input class="form-control inputs" type="text" name="" id="librolink"
+                                placeholder="insert the link or embbeded code">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="container my-3">
+
+            <a href="#abajo" class="btn btn-danger botonhilo" onclick="cambiar()">Prevew Your HILO</a>
+
+        </div>
+
+    </section>
+
+
+    <section id="presentacion" class=" fondo ">
+        <header class="superior">
+
+            <section class="videos">
+                <div id="salidavideos" class="contenidovideos text-center">
+
+                </div>
+                <div class="botonvideosh pestanavideos text-center">
+
+                    <i class="fa-brands fa-youtube naranja "></i>
+                    <h5>Videos </h5>
+
+                </div>
+
+            </section>
+            <section class="clasevirtual">
+                <div class=" contenidoclasevirtual" style="color:rgba(30,80,154,.9)">
+                    <center>
+                        <p class="lead">Summary:</p>
+                        <hr>
+                        <div class="tema">
+                            <div class="videostemario">
+                                <div id="salidaclasevirtual">
+                                    <!--           <iframe class="embed-responsive-item"
+                                        src="https://www.youtube.com/embed/kXYGtOCGMeQ?rel=0" frameborder="10"
+                                        width="400px" height="250px" allowfullscreen>
+                                    </iframe>
+                                    <div class="tema" style="  width:60%; height:100%; padding:20px;" align="justify">
+                                        <strong>Introducción al Sistema Binario:</strong><br>
+                                        Aquí comprenderas los inicios de este sistema y como es que funcionaba más como
+                                        modelo
+                                        matemático para contar que como base del mundo moderno
+                                    </div> -->
+                                </div>
+
+                            </div>
+
+
+
+
+                    </center>
+                </div>
+                <div class="botonclasevirtual pestanaclasevirtual text-center" data-toggle="popover"
+                    title="Clase virtual: El profesor ahora estará en esta sección y los recursos ebn los laterales">
+                    <i class="fa-solid fa-chalkboard "> </i>
+                    <h5>Virtual Clasroom</h5>
+
+                </div>
+            </section>
+            <section class="mapa">
+                <div class="mapacontenido" style="color:rgba(30,80,154,.9)">
+                    <div id="salidaconcepto" class="container row">
+
+                    </div>
+                </div>
+                <div class="mapaboton pestanamapas text-center">
+
+                    <i class="fa fa-sitemap naranja"></i>
+                    <h5>Concepts</h5>
+
+
+                </div>
+            </section>
+        </header>
+        <br>
+        <br>
+        <br>
+        <br>
+        <article class="centro">
+            <div class="infograma">
+                <div id="salidainfografia" class="infogramacontenido text-center" style=" color:rgba(30,80,154,.9);
+                    padding:20px;">
+                    <!-- https://static.docsity.com/documents_first_pages/2022/01/24/2cb5c90dc6ea5c831701e60ee2eab437.png -->
+                </div>
+                <div class="infogramaboton pestanainfograma text-center">
+
+                    <i class="fa-solid fa-images naranja"></i>
+                    <h5>Infographics</h5>
+
+                </div>
+            </div>
+            <div class="contenidocentral pestanacentral text-center">
+
+                <i class="fa fa-pie-chart naranja"></i>
+                <h5>Learning Object</h5>
+
+            </div>
+            <div class="lectura">
+                <div class="lecturacontenido">
+                    <div class="list-group">
+                        <div id="salidalibros">
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="botonlectura pestanalectura text-center">
+
+                    <i class="fa fa-book naranja"></i>
+                    <h5>Readings</h5>
+
+                </div>
+            </div>
+        </article>
+        <article class="medio">
+            <div class="podcast">
+                <div id="salidapodcast" class="podcastcontenido" style="color:rgba(30,80,154,.9); padding:20px;">
+
+                </div>
+                <div class="podcastboton pestanapodcast">
+                    <center>
+                        <i class="fa fa-headphones naranja"></i>
+                        <h5>Podcasts</h5>
+                    </center>
+                </div>
+            </div>
+            <div class="contenidocentral">
+
+            </div>
+            <div class="practicas" id="abajo">
+                <div class="practicascontenido" style="color:rgba(30,80,154,.9); padding:20px;">
+                    <div class="list-group">
+
+                    </div>
+                </div>
+                <div class="botonpracticas pestanapracticas">
+                    <center>
+                        <i class="fa fa-pie-chart naranja"></i>
+                        <h5>Practice</h5>
+                    </center>
+                </div>
+        </article>
+
+
+
+        <div class="titulo  inferior">
+            <strong>
+                <div id="titulohilo">
+                    <!-- <h3><i class="fa fa-keyboard" style="font-size:30px; padding-right:30px; "></i> ¿Qué es internet? </h3> -->
+
+                </div>
+            </strong>
+
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+</body>
+
+<script>
+
+
+    function cambiar() {
+        tit = document.querySelector("#titulohilo")
+        tit.innerHTML = '<h3><i class="fa fa-keyboard" style="font-size:30px; padding-right:30px; "></i>' + document.getElementById("nombrehilo").value + ' <a href="#diseño" class="btn btn-warning"> Go Back</a> </h3> ';
+        clasevirtual = document.querySelector("#salidaclasevirtual")
+        clasevirtual.innerHTML = '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/' + document.getElementById("clasevirtualvideo").value + '" frameborder="10" width="400px" height="250px" allowfullscreen> </iframe>\
+            <div class="tema" style="  width:60%; height:100%; padding:20px;" align="justify">'+ document.getElementById("clasevirtualtexto").value + '    </div>'
+        video = document.querySelector("#salidavideos")
+        video.innerHTML = '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/' + document.getElementById("video").value + '" frameborder="10" width="400px" height="250px" allowfullscreen> </iframe>'
+
+        concepto = document.querySelector("#salidaconcepto")
+        concepto.innerHTML = '<div class="col-2 ">\
+                                        <img class="media-object img-thumbnail" data-bs-toggle="modal" data-bs-target=".concepto"\
+                                            src="'+ document.getElementById("imagenconcepto").value + '"\
+                                            alt="..." width="80px" height="80px"  style="cursor:pointer" >\
+                                </div>\
+                                <div class="col-9 media-body">\
+                                 <h5 class="media-heading "><strong>'+ document.getElementById("tituloconcepto").value + '</strong></h5>\
+                                    <p style="font-size:14px">'+ document.getElementById("contenidoconcepto").value + '</p>\
+                                </div>'
+        conceptomodal = document.querySelector("#infoconcepto")
+        conceptomodal.innerHTML = ' <img src="' + document.getElementById("imagenconcepto").value + '" class="img-thumbnail" alt="" >'
+
+
+        infografia = document.querySelector("#salidainfografia")
+        infografia.innerHTML = '<img src="' + document.getElementById("infografia").value + '" class="img-thumbnail" alt="" width="200px" data-bs-toggle="modal" data-bs-target=".infografia" style="cursor:pointer">'
+
+        infografiamodal = document.querySelector("#infocontent")
+        infografiamodal.innerHTML = ' <img src="' + document.getElementById("infografia").value + '" class="img-thumbnail" alt="" >'
+
+
+        podcast = document.querySelector("#salidapodcast")
+        podcast.innerHTML = ' ' + document.getElementById("podcast").value + ' '
+
+        libros = document.querySelector("#salidalibros")
+        libros.innerHTML = '     <button type="button" class="btn btn-danger  botonhilo"  data-bs-toggle="modal" data-bs-target=".lecturas"><i class="fa fa-file-pdf" style="font-size:23px;"></i>'+ document.getElementById("librotitulo").value + '</button>'
+       
+        librosmodal = document.querySelector("#infoslectura")
+        librosmodal.innerHTML = '<div > <embed src="' +document.getElementById("librolink").value+'" style="display:block; height: 90vh;width: 70vw;"   /> </div>'
+
+
+    }
+
+    /* https://reader032.dokumen.tips/reader032/viewer/2022021500/586f5a261a28ab3d108b6565/html5/thumbnails/1.jpg */
+    clasevirtual = 0;
+    videos = 0;
+    mapas = 0;
+    infogramas = 0;
+    lecturas = 0;
+    podcasts = 0;
+    practicas = 0;
+
+    $(document).ready(function () {
+        $('.pestanaclasevirtual').click(function () {
+            $('.contenidoclasevirtual').slideToggle(1000);
+            if (clasevirtual == 0) {
+                $('.contenidoclasevirtual').load('clasevirtual/clasevirtual.html');
+                clasevirtual = clasevirtual + 1;
+            }
+        });
+        $('.pestanavideos').click(function () {
+            $('.contenidovideos').toggle("slide");
+            if (videos == 0) {
+                $('.contenidovideos').load('videos/videos.html');
+                videos = videos + 1;
+            }
+        });
+        $('.pestanamapas').click(function () {
+            $('.mapacontenido').toggle("slide");
+            if (mapas == 0) {
+                $('.mapacontenido').load('diagramas/diagramas.html');
+                mapas = mapas + 1;
+            }
+        });
+        $('.pestanainfograma').click(function () {
+            $('.infogramacontenido').toggle("slide");
+            if (infogramas == 0) {
+                $('.infogramacontenido').load('infogramas/infogramas.html');
+                infogramas = infogramas + 1;
+            }
+        });
+        $('.pestanalectura').click(function () {
+            $('.lecturacontenido').toggle("slide");
+            if (lecturas == 0) {
+                $('.lecturacontenido').load('lecturas/lecturas.html');
+                lecturas = lecturas + 1;
+            }
+        });
+        $('.pestanapodcast').click(function () {
+            $('.podcastcontenido').toggle("slide");
+            if (podcasts == 0) {
+                $('.podcastcontenido').load('podcasts/podcasts.html');
+                podcasts = podcasts + 1;
+            }
+        });
+        $('.pestanapracticas').click(function () {
+            $('.practicascontenido').toggle("slide");
+            if (practicas == 0) {
+                $('.practicascontenido').load('practicas/practicas.html');
+                practicas = practicas + 1;
+            }
+        });
+        $('.pestanacentral').click(function () {
+            $('footer').show(100);
+        });
+    });
+
+
+</script>
+
+</html>
